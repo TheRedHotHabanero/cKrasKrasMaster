@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 project(CKRASKRAS)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
@@ -10,7 +10,7 @@ set(COMPILERS_BINARY_ROOT ${CMAKE_CURRENT_BINARY_DIR})
 
 #-Wconversion
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wundef -Wwrite-strings -Wcast-qual -Wlogical-op")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fexceptions")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fexceptions -fconcepts")
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${COMPILERS_BINARY_ROOT}/bin)
 
@@ -24,6 +24,7 @@ include_directories(${CMAKE_BINARY_DIR})
 include_directories(${CMAKE_SOURCE_DIR})
 
 add_subdirectory(1_strings)
+add_subdirectory(7_concepts)
 #add_subdirectory(2_overloadings)
 
 # --------------------------clang-format--------------------------------------
